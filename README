@@ -1,0 +1,39 @@
+RasPiDoorbell - Web interface for connecting a doorbell to a RaspberryPi
+	Copyright (C) 2021 Ole-Henrik Jakobsen
+
+
+Requirements:
+	RaspberryPi with connected loudspeaker and doorbell button connected to a GPIO header (configurable).
+	It must be connected to the local network (do not open ports for this device on the firewall).
+
+
+Installation:
+	Packages required:
+		Python (should be installed by default)
+		pygame (should be installed by default)
+		web server (choose any)
+		php module for the web server
+
+
+	Get RasPiDoorbell
+	# sudo apt install git
+	# git clone https://github.com/olehj/RasPiDoorbell.git
+
+
+Configuration:
+	Edit config.ini:
+	- Set user and admin passwords
+	- Set or disable logging
+	- Set button pin
+	
+	Rest can be adjusted in the interface.
+
+
+Add into crontab:
+	# crontab -e
+	@reboot /home/pi/RasPiDoorbell/doorbell.sh
+	*/1 * * * * /home/pi/RasPiDoorbell/doorbell.sh &> /dev/null
+	*/5 * * * * php /home/pi/RasPiDoorbell/cron.php &> /dev/null
+
+
+Point the webserver to /home/pi/RasPiDoorbell folder.
