@@ -23,9 +23,8 @@ Installation:
 Configuration:
 	Edit config.ini:
 	- Set user and admin passwords
-	- Set or disable logging
 	
-	Rest can be adjusted in the interface.
+	Rest can be adjusted from the interface.
 
 
 Add into crontab:
