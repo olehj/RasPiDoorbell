@@ -24,7 +24,6 @@ Configuration:
 	Edit config.ini:
 	- Set user and admin passwords
 	- Set or disable logging
-	- Set button pin
 	
 	Rest can be adjusted in the interface.
 
